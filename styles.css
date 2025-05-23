@@ -1,0 +1,575 @@
+/**
+Palette: https://scrimba.com/links/hometown-palette
+RED: #E63946
+LIGHT: #F1FAEE
+AQUA: #A8DADC
+LIGHT BLUE: #457B9D
+DARK BLUE: #1D3557
+*/
+
+:root {
+  --turquesa-bahia: #2EC4B6;
+  --terracota-balear: #E07A5F;
+  --blanco-roto: #F4F1DE;
+  --azul-marino: #1A4B8C;
+  --dorado-luminico: #F2CC8F;
+  --verde-almendro: #81B29A;
+  --blanco-puro: #ffffff;
+  --font-headings: 'Playfair Display', serif;
+  --font-subheadings: 'Montserrat', sans-serif;
+  --font-text: 'Montserrat', sans-serif;
+  --font-text-traditional: 'Cormorant Garamond', serif;
+}
+
+*, *::before, *::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+::selection {
+    background: var(--terracota-balear);
+}
+
+:is(.guide-title, #gastronomy-title, .food-title)::selection {
+    background: var(--verde-almendro);
+}
+
+a, a:hover, a:visited, a:focus, a:active {
+    text-decoration: none;
+}
+
+ul li {
+    list-style-type: none;
+}
+
+img {
+    max-width: 300px;
+}
+
+h1, h2 {
+    font-family: var(--font-headings);
+}
+
+h3, h4 {
+    font-family: var(--font-subheadings);
+}
+
+body, p {
+    text-align: center;
+    font-family: var(--font-text);
+    font-weight: 400;
+}
+
+#section-hero {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-image: url('images/palma-cathedral-sunset.jpg');
+    background-size: cover;
+    width: 100%;
+    min-height: 200px;
+    overflow: hidden;
+}
+
+#section-hero::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background: #000;
+    opacity: 20%;
+}
+
+#section-hero > * {
+    z-index: 2;
+}
+
+#hero-img {
+    max-width: 1400px;
+}
+
+#hero-title, #hero-subtitle {
+    color: var(--blanco-roto);
+    text-shadow: 1px 1px 5px var(--dorado-luminico);
+}
+
+#hero-title {
+    padding: 4.5rem 1rem 0;
+    font-size: 4rem;
+    line-height: 1;
+    letter-spacing: 1px;
+    font-family: var(--font-text-traditional);
+}
+
+#hero-subtitle {
+    font-size: 1.5rem;
+    padding: 0rem 1rem 6rem;
+    margin-top: -2rem;
+}
+
+#section-activities {
+    background: var(--blanco-roto);
+    padding: 5rem 2rem;
+    color: var(--azul-marino);
+}
+
+.section-title {
+    font-size: 2.4rem;
+    line-height: 1.1;
+}
+
+.section-subtitle {
+    display: inline-block;
+    font-size: 1.1rem;
+    font-style: italic;
+    background: var(--terracota-balear);
+    color: var(--blanco-roto);
+    padding: .5rem .7rem;
+    margin: .5rem 0 2rem;
+}
+
+.activities-wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: space-around;
+}
+
+.activity-img {
+    margin-top: 3rem;
+    border-radius: 50%;
+    width: 125px;
+    height: 125px;
+    object-fit: cover;
+    object-position: 85%;
+}
+
+:nth-of-type(2) > .activity-img {
+    transform: rotate(3deg);
+}
+
+:nth-of-type(3) > .activity-img {
+    object-position: -45px;
+}
+
+.activity-title, .food-title {
+    font-size: 1.1rem;
+    margin-top: 1rem;
+}
+
+.activity-description {
+    margin-top: .3rem;
+    line-height: 1.4;
+}
+
+#section-gastronomy {
+    background: var(--dorado-luminico);
+    color: #001021;
+    padding: 5rem 1rem;
+    margin: 0 auto;
+}
+
+#gastronomy-title {
+    color: var(--terracota-balear);
+    text-shadow: 0 0 1px var(--blanco-roto);
+}
+
+#gastronomy-subtitle {
+    background: var(--verde-almendro);
+}
+
+.gastronomy-wrapper {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    column-gap: 20px;
+    max-width: 100%;
+    margin: 0 auto;
+}
+
+.food-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: var(--blanco-roto);
+    border-radius: 10px;
+    margin: 2rem auto;
+    max-width: 300px;
+}
+
+.food-item:hover .food-img {
+    filter: none;
+}
+
+.food-img {
+    filter: sepia(80%);
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    max-width: 300px;
+    height: 250px;
+    object-fit: cover;
+    object-position: 85%;
+    width: 100%;
+}
+
+.food-title {
+    color: var(--terracota-balear);
+    text-shadow: 0 0 1px var(--blanco-roto);
+    margin-top: 1rem;
+}
+
+.food-description {
+    font-family: var(--font-text-traditional);
+    color: var(--verde-almendro);
+    padding: 0 1rem 1rem;
+    margin-top: .3rem;
+    line-height: 1.4;
+    letter-spacing: .6px;;
+}
+
+#section-nightlife {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-image: url('images/titos.jpg');
+    background-position-x: 45.5%;
+    object-fit: cover;
+    width: 100%;
+    overflow: hidden;
+    min-height: 500px;
+    padding: 1rem;
+}
+
+#section-nightlife > * {
+    position: relative;
+    z-index: 2;
+}
+
+#section-nightlife::after {
+    content: "";
+    position: absolute;
+    background: #1A4B8C;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 70%;
+    mix-blend-mode: multiply;
+}
+
+#nightlife-title {
+    color: var(--turquesa-bahia);
+    text-shadow: 1px 1px 1px var(--azul-marino);
+    /* color: var(--dorado-luminico);
+    text-shadow: 1px 1px 1px var(--terracota-balear); */
+}
+
+#nightlife-subtitle {
+    color: var(--dorado-luminico);
+    text-shadow: 1px 1px 1px black;
+    background: none;
+    font-size: 1.5rem;
+}
+
+#secret {
+    margin-top: -1.5rem;
+    text-transform: uppercase;
+    padding: .5rem 1rem;
+    background: var(--terracota-balear);
+    font-style: normal;
+    color: var(--blanco-roto);
+    text-shadow: 0px 0px 2px var(--azul-marino);
+    font-weight: bold;
+    font-size: 1rem;
+}
+
+#section-guide {
+    padding: 5rem 1rem;
+    /* background: var(--blanco-roto); */
+    background: var(--turquesa-bahia);
+}
+
+.guide-card {
+    background: var(--blanco-roto);
+    border-radius: 20px;
+    border-bottom: 5px solid var(--terracota-balear);
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    max-width: 314px;
+}
+
+#section-guide:has(.guide-card:hover) {
+    background: var(--blanco-roto);
+}
+
+.guide-card:hover {
+    background: var(--azul-marino);
+    border-bottom: 5px solid var(--turquesa-bahia);
+}
+
+.guide-card:hover .guide-title {
+    color: var(--turquesa-bahia);
+}
+
+.guide-card:hover .guide-name {
+    color: var(--terracota-balear);
+}
+
+.guide-card:hover .guide-description {
+    color: var(--terracota-balear);
+}
+
+guide-card-image__wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+guide-card-text__wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.guide-title {
+    color: var(--terracota-balear);
+    font-size: 2rem;
+    padding: 0 1rem 0;
+}
+
+.guide-img {
+    /* padding: 2rem 2rem 1rem; */
+    margin: 2rem auto 1rem;
+    border-radius: 25px;
+    max-width: 150px;
+    width: 100%;
+}
+
+.guide-name {
+    color: var(--azul-marino);
+    font-size: 1.3rem;
+    margin: 0 1rem 1.5rem;
+}
+
+.guide-description {
+    margin: .4rem 1rem 1rem;
+    line-height: 1.4;
+    color: var(--azul-marino);
+    font-style: italic;
+}
+
+#footer {
+    background: var(--azul-marino);
+    color: var(--blanco-roto);
+    min-height: 150px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    row-gap: 1.5rem;
+    padding: 1rem;
+}
+
+.socials-list {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: .4rem;
+    padding-left: 2rem;
+}
+
+#copyright {
+    padding-right: 2rem;
+}
+
+@media (max-width: 300px) {
+    #section-hero {
+        background-position-x: 49%;
+        background-position-y: 63%;
+        background-size: 310%;
+    }
+}
+
+@media (min-width: 301px) and (max-width: 318px) {
+    #section-hero {
+        background-position-x: 49%;
+        background-position-y: 62%;
+        background-size: 305%;
+    }
+}
+
+@media (min-width: 319px) and (max-width: 360px) {
+    #section-hero {
+        background-position-x: 49%;
+        background-position-y: 73%;
+        background-size: 250%;
+    }
+}
+
+@media (min-width: 361px) and (max-width: 443px) {
+    #section-hero {
+        background-position-x: 49%;
+        background-position-y: 55%;
+        background-size: 250%;
+    }
+}
+
+@media (min-width: 444px) and (max-width: 489px) {
+    #section-hero {
+        min-height: 405px;
+        background-position-y: 65%;
+        background-position-x: 37%;
+        background-size: 213%;
+    }
+}
+
+@media (min-width: 490px) and (max-width: 546px) {
+    #section-hero {
+        background-position-y: 53%;
+        background-position-x: 36%;
+        background-size: 171%;
+    }
+}
+
+@media (min-width: 490px) {
+    .guide-card {
+        flex-direction: row;
+        justify-content: space-around;
+        align-items: center;
+        max-width: 570px;
+    }
+    
+    .guide-card-image__wrapper {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        width: 30%;
+        margin: 2rem 0 2rem 2rem;
+    }
+    
+    .guide-img {
+        margin: 0;
+    }
+    
+    .guide-card-text__wrapper {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-around;
+        width: 70%;
+    }
+    
+    .guide-title {
+        margin-top: 2rem;
+    }
+}
+
+
+
+
+
+@media (min-width: 547px) and (max-width: 671px) {
+    #section-hero {
+        background-position-y: 47%;
+        background-position-x: 36%;
+        background-size: 171%;
+    }
+}
+
+@media (min-width: 672px) and (max-width: 891px) {
+    .activities-wrapper {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(200px, 1fr));
+    }
+    
+    .activities-wrapper > :first-child {
+        grid-column: 1 / -1;
+        justify-self: center;
+        max-width: 50%;
+    }
+    
+    .activities-wrapper > .activity:not(:first-child) {
+        margin: 2.5rem;
+    }
+    
+    .gastronomy-wrapper > :last-child {
+        grid-column: 1 / -1;
+        justify-self: center;
+    }
+    
+    .gastronomy-wrapper > :last-child {
+        max-width: 100%;
+    }
+    
+    .food-img:last-of-type {
+        max-width: 1000px;
+    }
+}
+
+@media (min-width: 740px) {
+    #footer {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+    }
+}
+
+@media (min-width: 892px) {
+    .activities-wrapper {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+        align-items: center;
+        column-gap: 3rem;
+        max-width: 1278px;
+        margin: 0 auto;
+        padding: 0 3rem;
+    }
+    
+    .activity {
+        max-width: 400px;
+    }
+    
+    .activity-title {
+        white-space: nowrap;
+    }
+}
+
+@media (min-width: 672px) and (max-width: 766px) {
+    #section-hero {
+        background-position-y: 51%;
+        background-position-x: 36%;
+        background-size: 130%;
+    }
+}
+
+@media (min-width: 767px) and (max-width: 970px) {
+    #section-hero {
+        background-position-y: 51%;
+        background-position-x: 36%;
+        background-size: 109%;
+    }
+}
+
+@media (min-width: 971px) {
+    #section-hero {
+        background-position-y: 45%;
+        background-position-x: 36%;
+        background-size: 100%;
+    }
+}
+
+@media (min-width: 1200px) {
+    .gastronomy-wrapper {
+        max-width: 1278px;
+    }
+}
